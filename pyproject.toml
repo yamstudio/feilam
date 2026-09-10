@@ -1,0 +1,31 @@
+[project]
+name = "feilam"
+dynamic = ["version"]
+description = "Excel to EXIF"
+dependencies =  [
+  "click",
+  "fastexcel",
+  "numpy",
+  "polars"
+]
+requires-python = ">=3.14"
+version = "0.1.0"
+authors = [
+    {name = "Yujun Qin",email = "yamstudio@users.noreply.github.com"},
+]
+readme = "README.md"
+license = {text = "MIT"}
+
+[tool.pdm.scripts]
+cli = {call = "src.feilam.cli:main"}
+
+[build-system]
+requires = ["pdm-backend"]
+build-backend = "pdm.backend"
+
+[tool.pdm]
+distribution = false
+
+[tool.pdm.build]
+includes = ["src/"]
+source-includes = ["pdm.lock"]
